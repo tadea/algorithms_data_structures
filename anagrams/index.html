@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Algorithms and Data Structures</h1>
+
+    <p>Press F12 on your keyboard to view the message in the console view.</p>
+
+    <script>
+      // --- Directions
+      // Check to see if two provided strings are anagrams of eachother.
+      // One string is an anagram of another if it uses the same characters
+      // in the same quantity. Only consider characters, not spaces
+      // or punctuation.  Consider capital letters to be the same as lower case
+      function anagrams(strA, strB) {
+        return cleanStr(strA) === cleanStr(strB);
+      }
+
+      function cleanStr(str) {
+        return str
+          .replace(/[^\w]/g, "")
+          .toLowerCase()
+          .split("")
+          .sort()
+          .join("");
+      }
+
+      console.log(anagrams("hejhejjeee", "hejhejjeee")); //true
+      console.log(anagrams("hejjeee", "hejhejjeee")); //false
+    </script>
+  </body>
+</html>
